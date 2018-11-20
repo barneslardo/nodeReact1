@@ -5,7 +5,7 @@ var ejs = require("ejs");
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res){
-  res.send({hi: 'there'});
+  res.send({bye: 'buddy'});
   console.log("main route hit");
 });
 
