@@ -1,11 +1,14 @@
-var express = require("express"),
+const express = require("express"),
   mongoose = require("mongoose"),
   cookieSession = require("cookie-session"),
   passport = require("passport"),
   keys = require("./config/keys"),
   ejs = require("ejs");
 
-mongoose.connect(keys.mongoURI);
+mongoose.connect(
+  keys.mongoURI,
+  { useNewUrlParser: true }
+);
 const app = express();
 
 app.use(
