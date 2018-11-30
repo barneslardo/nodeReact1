@@ -3,7 +3,6 @@ const express = require("express"),
   cookieSession = require("cookie-session"),
   passport = require("passport"),
   keys = require("./config/keys"),
-  ejs = require("ejs"),
   bodyParser = require("body-parser");
 
 mongoose.connect(
@@ -26,10 +25,7 @@ app.use(passport.session());
 require("./models/user");
 require("./services/passport");
 require("./routes/authRoutes")(app);
-require("./routes/pageRoutes")(app);
 require("./routes/billingRoutes")(app);
-
-app.set("view engine", "ejs");
 
 var passportConfig = require("./services/passport");
 
