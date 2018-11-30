@@ -7,9 +7,4 @@ module.exports = app => {
     res.render("annie");
     console.log("annie page hit");
   });
-
-  app.get("*", function(req, res) {
-    res.render("catch");
-    console.log("catch hit");
-  });
 };
