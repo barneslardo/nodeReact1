@@ -4,6 +4,9 @@ const express = require("express"),
   passport = require("passport"),
   keys = require("./config/keys"),
   bodyParser = require("body-parser");
+require("./models/User");
+require("./models/Survey");
+require("./services/passport");
 
 mongoose.connect(
   keys.mongoURI,
@@ -23,9 +26,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require("./models/user");
+require("./models/survey");
 require("./services/passport");
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./surveyRoutes")(app);
 
 var passportConfig = require("./services/passport");
 
